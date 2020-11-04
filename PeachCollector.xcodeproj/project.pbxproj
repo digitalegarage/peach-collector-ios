@@ -763,7 +763,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#set -o xtrace\nfind \"${DERIVED_SOURCES_DIR}/CoreDataGenerated/PeachCollector\" -type f -name \"*.h\" -exec cp {} \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\" \\;\n\n";
+			shellScript = "#set -o xtrace\n#find \"${DERIVED_SOURCES_DIR}/CoreDataGenerated/PeachCollector\" -type f -name \"*.h\" -exec cp {} \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\" \\;\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
