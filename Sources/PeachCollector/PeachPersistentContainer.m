@@ -11,8 +11,14 @@
 @implementation PeachPersistentContainer
 
 - (instancetype)initWithName:(NSString *)name{
+
 #if SWIFT_PACKAGE
-    if (SWIFTPM_MODULE_BUNDLE) {
+
+		if (NSClassFromString(@"XCTest") != nil) {
+			return [super initWithName:name];
+		}
+
+		if (SWIFTPM_MODULE_BUNDLE) {
         NSBundle* bundle = SWIFTPM_MODULE_BUNDLE;
         NSLog(@"bundle2 : %@", bundle.bundlePath);
         NSURL * modelURL = [bundle URLForResource:@"PeachCollector" withExtension:@"mom"];
