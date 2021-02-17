@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Foundation/Foundation.h>
 #import "PeachCollectorNotifications.h"
 #import "PeachCollectorEvent.h"
 #import "PeachCollectorPublisher.h"
