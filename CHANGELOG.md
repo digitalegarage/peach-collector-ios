@@ -2,6 +2,24 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.2.5] - 2021-03-23
+
+### Added
+- Speculative fix for invalid memory access when app is in background
+
+## [1.2.4] - 2021-02-12
+
+### Changed
+- Swift Package type from `dynamic` to `static`
+
+## [1.2.3] - 2021-02-05
+
+### Added
+- `appID` can be defined in the `PeachCollector`. The default value is the bundle ID of your app.
+
+### Updated
+- Documentation avout previuously used Advertising Identifier (now identifierForVendor)
+
 ## [1.2.2] - 2020-12-09
 
 ### Fixed

@@ -79,14 +79,16 @@ PeachCollector.setPublisher(publisher, withUniqueName: "My Publisher")
 - A user ID can be defined using the **`userID`** PeachCollector property.
 - If userIDs are generated automatically for anonymous user. You can use the `userIsLoggedIn` flag to define if the user is logged in or not
 - For debugging purpose, a **`isUnitTesting`** flag is available. If true, notifications will be sent by the collector (see `PeachColletorNotifications.h`)
-- The collector retrieves the *Advertising ID* to set as the *device ID* in order to track users that do not have user IDs. People can choose to limit tracking on their devices and the Advertising ID will not be available anymore. In this case, if there is no **`userID`** defined, no events will be recorder or sent. Unless you set the **`shouldCollectAnonymousEvents`** flag to *true*. Default is *false*.
+- The collector retrieves the *identifierForVendor* to set as the *device ID* in order to track users that do not have user IDs. People can choose to limit tracking on their devices and this ID will not be sent to Peach. In this case, if there is no **`userID`** defined, no events will be recorder or sent. Unless you set the **`shouldCollectAnonymousEvents`** flag to *true*. Default is *false*.
 - Optionally, you can define an **`implementationVersion`** by setting a PeachCollector property.
 - **`maximumStorageDays`** is the maximum number of days an event should be kept in the queue (if it could not be sent).
 - **`maximumStoredEvents`** is the maximum number of events that should be kept in the queue. 
+- An **`appID`** can be defined if you don't want to use the default value (which is the bundle ID of the app).
 
 #### Objective-C
 ```objectivec
 PeachCollector.userID = @"123e4567-e89b-12d3-a456-426655440000";
+PeachCollector.appID = @"test.app.id";
 [PeachCollector sharedCollector].isUnitTesting = YES;
 [PeachCollector sharedCollector].shouldCollectAnonymousEvents = YES;
 PeachCollector.implementationVersion = @"1";
@@ -97,6 +99,7 @@ PeachCollector.maximumStoredEvents = 1000;
 #### Swift
 ```swift
 PeachCollector.userID = "123e4567-e89b-12d3-a456-426655440000";
+PeachCollector.appID = "test.app.id";
 PeachCollector.shared.isUnitTesting = true;
 PeachCollector.shared.shouldCollectAnonymousEvents = true;
 PeachCollector.implementationVersion = "1";
